@@ -12,9 +12,9 @@ client = MongoClient(mongo_uri)
 
 db = client["todoDB"]
 collection = db["todoItems"]
-
+print(client.list_database_names())
 # Flask app
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../frontend')
 
 # Home route
 @app.route('/')
@@ -32,12 +32,12 @@ def submit_todo():
         "itemDescription": item_description
     }
 
-    collection.insert_one(data)
+    result = collection.insert_one(data)
 
     return jsonify({
         "message": "Todo item saved successfully",
-        "data": data
+        "id": str(result.inserted_id)
     })
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True ,host='0.0.0.0', port=7000)
