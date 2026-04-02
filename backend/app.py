@@ -43,3 +43,8 @@ def submit_todo():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=7000)
+    
+    
+    #fe07c53 (HEAD -> master_1) Added Item Hash field
+#c7ca277 Added Item UUID field
+#60a9bd Added Item ID field
