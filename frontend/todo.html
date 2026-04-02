@@ -4,7 +4,10 @@
 </head>
 <body>
     <h2>To-Do Form</h2>
-    <form action="http://127.0.0.1:5000/submittodoitem" method="POST">
+    <form action="/submittodoitem" method="POST">
+        <label>Item ID:</label><br>
+        <input type="text" name="itemId" required><br><br>
+        
         <label>Item Name:</label><br>
         <input type="text" name="itemName" required><br><br>
 
